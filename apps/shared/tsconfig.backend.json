@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist/backend",
+    "target": "es2022",
+    "tsBuildInfoFile": "dist/backend/backend.tsbuildinfo",
+  },
+  "include": ["src"]
+}

@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "type": "module",
+  "author": "Your Name Here",
+  "name": "backend",
+  "description": "Ditsmod application",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">= 18.14.0"
+  },
+  "directories": {
+    "lib": "src"
+  },
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "start": "npm run build && node --enable-source-maps dist/main.js",
+    "node-watch": "node --watch --enable-source-maps dist/main.js",
+    "start:dev": "run-p 'build -- --watch' node-watch",
+    "build-test": "tsc -b tsconfig.e2e.json --watch",
+    "vitest": "vitest",
+    "test": "run-p build-test vitest",
+    "lint": "eslint .",
+    "clean": "rimraf dist*"
+  },
+  "imports": {
+    "#app/*": "./dist/app/*",
+    "#routed/*": "./dist/app/modules/routed/*",
+    "#service/*": "./dist/app/modules/service/*"
+  },
+  "dependencies": {
+    "@ditsmod/body-parser": "^3.0.0-alpha.3",
+    "@ditsmod/core": "^3.0.0-alpha.3",
+    "@ditsmod/routing": "^3.0.0-alpha.3",
+    "dotenv": "^16.6.1"
+  },
+  "devDependencies": {
+    "@ditsmod/testing": "^3.0.0-alpha.3",
+    "@types/supertest": "^6.0.3",
+    "supertest": "^6.3.4"
+  }
+}

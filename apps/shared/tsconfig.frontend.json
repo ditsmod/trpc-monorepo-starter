@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist/frontend",
+    "target": "es2015",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "tsBuildInfoFile": "dist/frontend/frontend.tsbuildinfo",
+  },
+  "include": ["src"]
+}

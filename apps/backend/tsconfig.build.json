@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "noImplicitOverride": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "tsBuildInfoFile": "dist/build.tsbuildinfo",
+    "baseUrl": "."
+  },
+  "include": ["src"],
+  "exclude": ["src/**/*.spec.ts"],
+  "files": [],
+  "references": [{ "path": "../shared/tsconfig.backend.json" }]
+}

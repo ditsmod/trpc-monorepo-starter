@@ -1,0 +1,34 @@
+{
+  "private": true,
+  "type": "module",
+  "name": "shared",
+  "version": "1.0.0",
+  "description": "",
+  "module": "./dist/backend/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/backend/index.js",
+      "require": "./dist/frontend/index.js",
+      "default": "./dist/frontend/index.js"
+    },
+    "./markdown": {
+      "import": "./dist/backend/markdown.js",
+      "require": "./dist/frontend/markdown.js",
+      "default": "./dist/backend/markdown.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b tsconfig.backend.json && tsc -b tsconfig.frontend.json",
+    "clean": "rimraf dist*"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "@types/katex": "^0.11.1"
+  },
+  "dependencies": {
+    "@ts-stack/markdown": "^1.5.0",
+    "highlight.js": "^11.11.1",
+    "katex": "^0.13.24"
+  }
+}
