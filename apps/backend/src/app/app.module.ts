@@ -1,13 +1,27 @@
-import { Providers, rootModule } from '@ditsmod/core';
-import { RoutingModule } from '@ditsmod/routing';
-import { BodyParserModule } from '@ditsmod/body-parser';
+import { rootModule } from '@ditsmod/core';
+import type { SetAppRouterOptions, TrpcCreateCtxOpts, TrpcCreateOptions, TrpcRootModule } from '@ditsmod/trpc';
+import type { AppRouterHelper } from '@ditsmod/trpc/client';
 
-import { HelloWorldModule } from './modules/routed/hello-world/hello-world.module.js';
+import { PostModule } from './modules/post/post.module.js';
+import { createContext } from './create-context.js';
+
+const modulesWithTrpcRoutes = [PostModule] as const;
+export type AppRouter = AppRouterHelper<typeof modulesWithTrpcRoutes>;
 
 @rootModule({
-  providersPerApp: new Providers().useLogConfig({ level: 'info' }),
-  appends: [HelloWorldModule],
-  imports: [RoutingModule, BodyParserModule],
-  exports: [RoutingModule, BodyParserModule],
+  imports: [...modulesWithTrpcRoutes],
 })
-export class AppModule {}
+export class AppModule implements TrpcRootModule {
+  setTrpcCreateOptions(): TrpcCreateOptions {
+    return {
+      // Passing options for initTRPC.create()
+    };
+  }
+
+  setAppRouter(): SetAppRouterOptions {
+    return {
+      basePath: '/trpc/',
+      createContext
+    };
+  }
+}

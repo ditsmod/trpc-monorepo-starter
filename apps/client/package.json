@@ -1,9 +1,9 @@
 {
-  "name": "backend",
+  "name": "client",
   "private": true,
   "type": "module",
   "author": "Your Name Here",
-  "description": "Ditsmod application",
+  "description": "Client tRPC Demo",
   "version": "1.0.0",
   "engines": {
     "node": ">= 18.14.0"
@@ -16,20 +16,11 @@
     "start": "npm run build && node --enable-source-maps dist/main.js",
     "node-watch": "node --watch --enable-source-maps dist/main.js",
     "start:dev": "run-p 'build -- --watch' node-watch",
-    "build-test": "tsc -b tsconfig.e2e.json",
-    "esm-jest": "node --enable-source-maps --experimental-vm-modules --no-warnings=ExperimentalWarning ../../node_modules/jest/bin/jest.js",
-    "test": "npm run build-test && npm run esm-jest",
+    "build-test": "tsc -b tsconfig.e2e.json --watch",
+    "esm-jest": "node  --enable-source-maps --experimental-vm-modules ../../node_modules/jest/bin/jest.js",
+    "test": "run-p build-test esm-jest",
     "lint": "eslint .",
     "clean": "rimraf dist*"
-  },
-  "exports": {
-    "./package.json": {
-      "default": "./package.json"
-    },
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    }
   },
   "imports": {
     "#app/*": "./dist/app/*",
@@ -37,14 +28,10 @@
     "#service/*": "./dist/app/modules/service/*"
   },
   "dependencies": {
-    "@ditsmod/core": "^3.0.0-alpha.4",
-    "@ditsmod/trpc": "^3.0.0-alpha.4",
-    "@trpc/server": "^11.5.1",
-    "dotenv": "^16.6.1",
-    "zod": "^4.1.5"
+    "@trpc/client": "^11.5.1"
   },
   "devDependencies": {
-    "@ditsmod/testing": "^3.0.0-alpha.4",
+    "@ditsmod/testing": "^3.0.0-alpha.3",
     "@types/supertest": "^6.0.3",
     "supertest": "^6.3.4"
   }

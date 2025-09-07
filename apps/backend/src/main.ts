@@ -1,10 +1,5 @@
-import { ServerOptions } from 'node:http';
-import { Application } from '@ditsmod/core';
+import { TrpcApplication } from '@ditsmod/trpc';
+import { AppModule } from '#app/app.module.js';
 
-import { AppModule } from './app/app.module.js';
-import { checkCliAndSetPort } from './app/utils/check-cli-and-set-port.js';
-
-const serverOptions: ServerOptions = { keepAlive: true, keepAliveTimeout: 5000 };
-const app = await Application.create(AppModule, { serverOptions, path: 'api' });
-const port = checkCliAndSetPort(3000);
-app.server.listen(port, '0.0.0.0');
+const app = await TrpcApplication.create(AppModule, { bufferLogs: false, showExternalLogs: true });
+app.server.listen(2021, '0.0.0.0');

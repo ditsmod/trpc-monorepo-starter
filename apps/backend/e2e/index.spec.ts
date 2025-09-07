@@ -1,45 +1,46 @@
 import request from 'supertest';
-import { TestApplication } from '@ditsmod/testing';
-import { HttpServer } from '@ditsmod/core';
-import { afterAll, beforeAll, describe, it, vi } from 'vitest';
+import { TrpcApplication } from '@ditsmod/trpc';
+import type { Server } from 'http';
+import { jest } from '@jest/globals';
 
 import { AppModule } from '#app/app.module.js';
 
 describe('Integration tests for HelloWorldController', () => {
-  let server: HttpServer;
+  let server: Server;
   let testAgent: ReturnType<typeof request>;
 
   beforeAll(async () => {
-    vi.restoreAllMocks();
-    server = await TestApplication.createTestApp(AppModule, { path: 'api' }).getServer();
+    jest.restoreAllMocks();
+    const app = await TrpcApplication.create(AppModule);
+    server = app.server as Server;
     testAgent = request(server);
+    console.log = jest.fn;
   });
 
   afterAll(() => {
     server.close();
   });
 
-  it('controller works', async () => {
-    await testAgent.get('/api/hello').expect(200).expect('Hello World!');
+  it('create post', async () => {
+    const result = await testAgent.post('/trpc/post.createPost').send({ title: 'hello client' }).expect(200);
+    expect(result.body.result.data).toEqual({ title: 'hello client', id: 1, body: 'post text' });
   });
 
-  it('should parsed post', async () => {
-    await testAgent.post('/api/body').send({ one: 1 }).expect(200).expect({ one: 1 });
+  it('query comments', async () => {
+    const result = await testAgent.get('/trpc/post.comments.listComments').expect(200);
+    expect(result.body.result.data).toEqual([{ id: 1, title: 'first comment', body: 'text of first comment' }]);
   });
 
-  it('should throw an error', async () => {
-    await testAgent.get('/api/throw-error').expect(500);
+  it('create comment', async () => {
+    const result = await testAgent
+      .post('/trpc/post.comments.createComment')
+      .send({ title: 'this is tRPC demo' })
+      .expect(200);
+    expect(result.body.result.data).toEqual({ title: 'this is tRPC demo', id: 10, body: 'comment text' });
   });
 
-  it('singleton controller works', async () => {
-    await testAgent.get('/api/hello2').expect(200).expect('Hello World!');
-  });
-
-  it('singleton controller should parsed post', async () => {
-    await testAgent.post('/api/body2').send({ one: 1 }).expect(200).expect({ one: 1 });
-  });
-
-  it('singleton controller should throw an error', async () => {
-    await testAgent.get('/api/throw-error2').expect(500);
+  it('list of comments', async () => {
+    const result = await testAgent.get('/trpc/post.comments.listComments').expect(200);
+    expect(result.body.result.data).toEqual([{ id: 1, title: 'first comment', body: 'text of first comment' }]);
   });
 });

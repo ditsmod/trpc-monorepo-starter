@@ -5,7 +5,8 @@
     "noImplicitOverride": true,
     "outDir": "dist",
     "rootDir": "src",
-    "tsBuildInfoFile": "dist/build.tsbuildinfo"
+    "tsBuildInfoFile": "dist/build.tsbuildinfo",
+    "baseUrl": "."
   },
   "include": ["src"],
   "exclude": ["src/**/*.spec.ts"],
