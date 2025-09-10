@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "server",
   "private": true,
   "type": "module",
   "author": "Your Name Here",
@@ -37,14 +37,13 @@
     "#service/*": "./dist/app/modules/service/*"
   },
   "dependencies": {
-    "@ditsmod/core": "^3.0.0-alpha.4",
-    "@ditsmod/trpc": "^3.0.0-alpha.4",
+    "@ditsmod/core": "^3.0.4-alpha.4",
+    "@ditsmod/trpc": "^3.0.4-alpha.4",
     "@trpc/server": "^11.5.1",
     "dotenv": "^16.6.1",
     "zod": "^4.1.5"
   },
   "devDependencies": {
-    "@ditsmod/testing": "^3.0.0-alpha.4",
     "@types/supertest": "^6.0.3",
     "supertest": "^6.3.4"
   }

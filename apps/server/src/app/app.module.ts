@@ -1,5 +1,5 @@
 import { rootModule } from '@ditsmod/core';
-import type { SetAppRouterOptions, TrpcCreateCtxOpts, TrpcCreateOptions, TrpcRootModule } from '@ditsmod/trpc';
+import type { SetAppRouterOptions, TrpcCreateOptions, TrpcRootModule } from '@ditsmod/trpc';
 import type { AppRouterHelper } from '@ditsmod/trpc/client';
 
 import { PostModule } from './modules/post/post.module.js';
@@ -21,7 +21,6 @@ export class AppModule implements TrpcRootModule {
   setAppRouter(): SetAppRouterOptions {
     return {
       basePath: '/trpc/',
-      createContext
     };
   }
 }

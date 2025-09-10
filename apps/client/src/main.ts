@@ -2,7 +2,7 @@ import type { AnyTRPCRouter } from '@trpc/server';
 import { createTRPCClient, httpBatchLink, loggerLink, TRPCClient } from '@trpc/client';
 import { tap } from '@trpc/server/observable';
 import { inspect } from 'node:util';
-import type { PostRouter } from 'backend';
+import type { PostRouter } from 'server';
 
 const url = 'http://localhost:2021/trpc';
 const mergedRouters = createTRPCClient<AnyTRPCRouter>({
