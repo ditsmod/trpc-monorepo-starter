@@ -10,9 +10,9 @@
   "scripts": {
     "test": "tsc -b apps/tsconfig.e2e.json && npm run esm-jest",
     "esm-jest": "node  --enable-source-maps --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "start": "npm run build && node --watch --enable-source-maps -r dotenv/config apps/backend/dist/main.js dotenv_config_path=apps/backend/.env",
+    "start": "npm run build && node --watch --enable-source-maps -r dotenv/config apps/server/dist/main.js dotenv_config_path=apps/server/.env",
     "start:dev": "run-p watch start",
-    "start-prod": "node -r dotenv/config apps/backend/dist/main.js dotenv_config_path=apps/backend/.env",
+    "start-prod": "node -r dotenv/config apps/server/dist/main.js dotenv_config_path=apps/server/.env",
     "build": "tsc -b apps/tsconfig.json",
     "watch": "npm run build -- --watch",
     "lint": "eslint .",

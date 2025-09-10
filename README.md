@@ -10,10 +10,10 @@ From start you need to do:
 npm install
 ```
 
-After that, copy `apps/backend/.env-example` to `apps/backend/.env`:
+After that, copy `apps/server/.env-example` to `apps/server/.env`:
 
 ```bash
-cp apps/backend/.env-example apps/backend/.env
+cp apps/server/.env-example apps/server/.env
 ```
 
 And fill this file.
@@ -27,12 +27,12 @@ npm run start:dev
 You can check the server operation using `curl`:
 
 ```bash
-curl -i localhost:3000/api/hello
+curl -i localhost:2021/trpc/hello
 ```
 
-Or simply by going to [http://localhost:3000/api/hello](http://localhost:3000/api/hello) in your browser.
+Or simply by going to [http://localhost:2021/trpc/hello](http://localhost:2021/trpc/hello) in your browser.
 
-By default, the application works with `info` log level. You can change it in the file `apps/backend/src/app/app.module.ts`.
+By default, the application works with `info` log level. You can change it in the file `apps/server/src/app/app.module.ts`.
 
 ## Start the web server in production mode
 

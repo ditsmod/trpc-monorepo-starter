@@ -28,5 +28,5 @@
     "removeComments": false
   },
   "include": ["src", "e2e"],
-  "references": [{ "path": "../shared/tsconfig.backend.json" }]
+  "references": [{ "path": "../shared/tsconfig.server.json" }]
 }

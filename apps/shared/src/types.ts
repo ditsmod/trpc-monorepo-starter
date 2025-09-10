@@ -8,8 +8,8 @@
 export interface ApiResponse<T, M = AnyObj, E = { message: string }> {
   data?: T[];
   /**
-   * Backend metadata used to generate the current query on the frontend.
-   * For example, if a request with an array of data came from the backend,
+   * server metadata used to generate the current query on the frontend.
+   * For example, if a request with an array of data came from the server,
    * the `meta` object may come to `pagination`.
    */
   meta?: M;

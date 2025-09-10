@@ -4,21 +4,21 @@
   "name": "shared",
   "version": "1.0.0",
   "description": "",
-  "module": "./dist/backend/index.js",
+  "module": "./dist/server/index.js",
   "exports": {
     ".": {
-      "import": "./dist/backend/index.js",
+      "import": "./dist/server/index.js",
       "require": "./dist/frontend/index.js",
       "default": "./dist/frontend/index.js"
     },
     "./markdown": {
-      "import": "./dist/backend/markdown.js",
+      "import": "./dist/server/markdown.js",
       "require": "./dist/frontend/markdown.js",
-      "default": "./dist/backend/markdown.js"
+      "default": "./dist/server/markdown.js"
     }
   },
   "scripts": {
-    "build": "tsc -b tsconfig.backend.json && tsc -b tsconfig.frontend.json",
+    "build": "tsc -b tsconfig.server.json && tsc -b tsconfig.frontend.json",
     "clean": "rimraf dist*"
   },
   "keywords": [],
