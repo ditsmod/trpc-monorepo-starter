@@ -3,7 +3,6 @@ import type { SetAppRouterOptions, TrpcCreateOptions, TrpcRootModule } from '@di
 import type { AppRouterHelper } from '@ditsmod/trpc/client';
 
 import { PostModule } from './modules/post/post.module.js';
-import { createContext } from './create-context.js';
 
 const modulesWithTrpcRoutes = [PostModule] as const;
 export type AppRouter = AppRouterHelper<typeof modulesWithTrpcRoutes>;
