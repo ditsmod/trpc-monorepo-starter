@@ -27,10 +27,10 @@ npm run start:dev
 You can check the server operation using `curl`:
 
 ```bash
-curl -i localhost:2021/trpc/hello
+curl -i http://localhost:2021/trpc/post.comments.listComments
 ```
 
-Or simply by going to [http://localhost:2021/trpc/hello](http://localhost:2021/trpc/hello) in your browser.
+Or simply by going to [http://localhost:2021/trpc/post.comments.listComments](http://localhost:2021/trpc/post.comments.listComments) in your browser.
 
 By default, the application works with `info` log level. You can change it in the file `apps/server/src/app/app.module.ts`.
 
