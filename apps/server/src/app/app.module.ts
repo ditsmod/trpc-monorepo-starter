@@ -17,7 +17,7 @@ export class AppModule implements TrpcRootModule {
     };
   }
 
-  setAppRouter(): SetAppRouterOptions {
+  setAppRouterOptions(): SetAppRouterOptions {
     return {
       basePath: '/trpc/',
     };
