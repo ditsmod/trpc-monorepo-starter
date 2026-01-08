@@ -18,7 +18,7 @@
     }
   },
   "scripts": {
-    "build": "tsc -b tsconfig.server.json && tsc -b tsconfig.frontend.json",
+    "build": "tsgo -b tsconfig.server.json && tsgo -b tsconfig.frontend.json",
     "clean": "rimraf dist*"
   },
   "keywords": [],

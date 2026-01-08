@@ -12,11 +12,11 @@
     "lib": "src"
   },
   "scripts": {
-    "build": "tsc -b tsconfig.build.json",
+    "build": "tsgo -b tsconfig.build.json",
     "start": "npm run build && node --enable-source-maps dist/main.js",
     "node-watch": "node --watch --enable-source-maps dist/main.js",
     "start:dev": "run-p 'build -- --watch' node-watch",
-    "build-test": "tsc -b tsconfig.e2e.json",
+    "build-test": "tsgo -b tsconfig.e2e.json",
     "esm-jest": "node --enable-source-maps --experimental-vm-modules --no-warnings=ExperimentalWarning ../../node_modules/jest/bin/jest.js",
     "test": "npm run build-test && npm run esm-jest",
     "lint": "eslint .",
@@ -41,7 +41,7 @@
     "@ditsmod/trpc": "^3.0.0-alpha.5",
     "@trpc/server": "^11.5.1",
     "dotenv": "^16.6.1",
-    "zod": "^4.1.5"
+    "zod": "^4.3.5"
   },
   "devDependencies": {
     "@types/supertest": "^6.0.3",

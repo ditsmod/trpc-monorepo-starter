@@ -5,11 +5,13 @@
     "noImplicitOverride": true,
     "outDir": "dist",
     "rootDir": "src",
-    "tsBuildInfoFile": "dist/build.tsbuildinfo",
-    "baseUrl": "."
+    "tsBuildInfoFile": "dist/build.tsbuildinfo"
   },
   "include": ["src"],
   "exclude": ["src/**/*.spec.ts"],
   "files": [],
-  "references": [{ "path": "../shared/tsconfig.server.json" }]
+  "references": [
+    { "path": "../shared/tsconfig.server.json" },
+    { "path": "../server/tsconfig.build.json" },
+  ]
 }
