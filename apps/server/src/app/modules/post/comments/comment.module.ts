@@ -1,12 +1,10 @@
-import { featureModule } from '@ditsmod/core';
-import { initTrpcModule, ModuleWithTrpcRoutes } from '@ditsmod/trpc';
+import { trpcModule, ModuleWithTrpcRoutes } from '@ditsmod/trpc';
 
 import { CommentController } from './comment.controller.js';
 
-@initTrpcModule({
+@trpcModule({
   controllers: [CommentController],
 })
-@featureModule()
 export class CommentModule implements ModuleWithTrpcRoutes {
   getRouterConfig() {
     return {

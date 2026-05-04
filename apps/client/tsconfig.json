@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "noEmit": true,
+    "types": ["node", "jest"],
     "paths": {
       "#app/*": ["./src/app/*"],
       "#routed/*": ["./src/app/modules/routed/*"],
