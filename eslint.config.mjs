@@ -1,16 +1,16 @@
 // @ts-check
 
 import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
 import { defineConfig } from 'eslint/config';
+import tseslint from 'typescript-eslint';
 
-export default defineConfig(
+export default defineConfig([
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {
     languageOptions: {
       parserOptions: {
-        projectService: true
+        projectService: true,
       },
     },
   },
@@ -19,7 +19,9 @@ export default defineConfig(
       semi: ['error', 'always'],
       quotes: ['error', 'single', { avoidEscape: true }],
       '@typescript-eslint/no-floating-promises': 'error',
-      '@typescript-eslint/no-misused-promises': 0,
+      '@typescript-eslint/no-misused-promises': 1,
+      '@typescript-eslint/no-unused-expressions': 'warn',
+      '@typescript-eslint/consistent-type-imports': 1,
       '@typescript-eslint/no-empty-object-type': 0,
       '@typescript-eslint/no-non-null-assertion': 0,
       '@typescript-eslint/no-empty-function': 0,
@@ -31,7 +33,6 @@ export default defineConfig(
       '@typescript-eslint/no-non-null-asserted-optional-chain': 0,
       '@typescript-eslint/no-unused-vars': 0,
       '@typescript-eslint/triple-slash-reference': 0,
-      '@typescript-eslint/ban-types': 0,
       'no-async-promise-executor': 0,
       'no-prototype-builtins': 0,
     },
@@ -44,6 +45,9 @@ export default defineConfig(
       'eslint.config.mjs',
       '**/jest.config.ts',
       '**/vitest.config.ts',
+      '**/jest.setup.js',
+      '**/jest.d.ts',
+      '**/jest.matchers.ts',
     ],
   },
-);
+]);
