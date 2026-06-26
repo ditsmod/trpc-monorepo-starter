@@ -8,7 +8,7 @@
     "apps/*"
   ],
   "scripts": {
-    "test": "tsgo -b apps/tsconfig.e2e.json && npm run esm-jest",
+    "test": "tsgo -b apps/tsconfig.e2e.json && npm run esm-jest --",
     "esm-jest": "node  --enable-source-maps --experimental-vm-modules node_modules/jest/bin/jest.js",
     "start": "npm run build && node --watch --enable-source-maps -r dotenv/config apps/server/dist/main.js dotenv_config_path=apps/server/.env",
     "start:dev": "run-p watch start",
