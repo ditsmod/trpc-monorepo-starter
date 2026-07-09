@@ -1,5 +1,6 @@
 import type { AnyTRPCRouter } from '@trpc/server';
-import { createTRPCClient, httpBatchLink, loggerLink, TRPCClient } from '@trpc/client';
+import type { TRPCClient } from '@trpc/client';
+import { createTRPCClient, httpBatchLink, loggerLink } from '@trpc/client';
 import { tap } from '@trpc/server/observable';
 import { inspect } from 'node:util';
 import type { PostRouter } from 'server';

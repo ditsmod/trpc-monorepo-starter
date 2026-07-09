@@ -15,7 +15,7 @@
     "build": "tsgo -b tsconfig.build.json",
     "start": "npm run build && node --enable-source-maps dist/main.js",
     "node-watch": "node --watch --enable-source-maps dist/main.js",
-    "start:dev": "run-p 'build -- --watch' node-watch",
+    "start:dev": "ditsmod start",
     "build-test": "tsgo -b tsconfig.e2e.json",
     "esm-jest": "node --enable-source-maps --experimental-vm-modules --no-warnings=ExperimentalWarning ../../node_modules/jest/bin/jest.js",
     "test": "npm run build-test && npm run esm-jest",

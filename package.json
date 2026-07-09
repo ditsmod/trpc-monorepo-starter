@@ -1,9 +1,9 @@
 {
-  "name": "monorepo-starter",
+  "name": "trpc-monorepo-starter",
   "private": true,
   "type": "module",
   "version": "1.0.0",
-  "description": "Starter for monorepositories",
+  "description": "Starter for tRPC monorepositories",
   "workspaces": [
     "apps/*"
   ],
@@ -11,7 +11,7 @@
     "test": "tsgo -b apps/tsconfig.e2e.json && npm run esm-jest --",
     "esm-jest": "node  --enable-source-maps --experimental-vm-modules node_modules/jest/bin/jest.js",
     "start": "npm run build && node --watch --enable-source-maps -r dotenv/config apps/server/dist/main.js dotenv_config_path=apps/server/.env",
-    "start:dev": "run-p watch start",
+    "start:dev": "ditsmod start -p apps/server",
     "start-prod": "node -r dotenv/config apps/server/dist/main.js dotenv_config_path=apps/server/.env",
     "build": "tsgo -b apps/tsconfig.json",
     "watch": "npm run build -- --watch",
@@ -20,13 +20,13 @@
     "clean": "rimraf apps/*/dist*"
   },
   "devDependencies": {
+    "@ditsmod/cli": "^3.0.2-next.13",
     "@eslint/js": "^10.0.1",
     "@types/jest": "^30.0.0",
     "@types/node": "^18.19.130",
     "@typescript/native-preview": "^7.0.0-dev.20260630.1",
     "eslint": "^10.6.0",
     "jest": "^30.4.2",
-    "npm-run-all": "^4.1.5",
     "prettier": "^2.8.8",
     "rimraf": "^4.4.1",
     "ts-node": "^10.9.2",
