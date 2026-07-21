@@ -37,8 +37,8 @@
     "#service/*": "./dist/app/modules/service/*"
   },
   "dependencies": {
-    "@ditsmod/core": "^3.0.0-next.16",
-    "@ditsmod/trpc": "^3.0.0-next.16",
+    "@ditsmod/core": "^3.0.0-next.17",
+    "@ditsmod/trpc": "^3.0.0-next.17",
     "@trpc/server": "^11.5.1",
     "dotenv": "^16.6.1",
     "zod": "^4.4.3"
