@@ -11,17 +11,17 @@
     "test": "tsgo -b apps/tsconfig.e2e.json && npm run esm-jest --",
     "esm-jest": "node  --enable-source-maps --experimental-vm-modules node_modules/jest/bin/jest.js",
     "start": "npm run build && node --watch --enable-source-maps -r dotenv/config apps/server/dist/main.js dotenv_config_path=apps/server/.env",
-    "start:dev": "ditsmod start -p apps/server",
+    "start:dev": "holu start -p apps/server",
     "start-prod": "node -r dotenv/config apps/server/dist/main.js dotenv_config_path=apps/server/.env",
     "build": "tsgo -b apps/tsconfig.json",
     "watch": "npm run build -- --watch",
     "lint": "eslint .",
-    "setup:agents": "curl -fsSL https://raw.githubusercontent.com/ditsmod/agent-skills/main/AGENTS.md -o AGENTS.md",
+    "setup:agents": "curl -fsSL https://raw.githubusercontent.com/holujs/agent-skills/main/AGENTS.md -o AGENTS.md",
     "clean": "rimraf apps/*/dist*"
   },
   "devDependencies": {
-    "@ditsmod/cli": "^3.0.0-next.18",
     "@eslint/js": "^10.0.1",
+    "@holu/cli": "^0.1.2",
     "@types/jest": "^30.0.0",
     "@types/node": "^18.19.130",
     "@typescript/native-preview": "^7.0.0-dev.20260707.2",
@@ -31,6 +31,6 @@
     "rimraf": "^4.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.65.0"
+    "typescript-eslint": "^8.66.0"
   }
 }

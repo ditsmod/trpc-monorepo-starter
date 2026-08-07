@@ -1,4 +1,4 @@
-import { trpcModule, ModuleWithTrpcRoutes } from '@ditsmod/trpc';
+import { trpcModule, ModuleWithTrpcRoutes } from '@holu/trpc';
 
 import { CommentController } from './comment.controller.js';
 

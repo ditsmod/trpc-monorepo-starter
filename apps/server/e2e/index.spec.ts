@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { TrpcApplication } from '@ditsmod/trpc';
+import { TrpcApplication } from '@holu/trpc';
 import type { Server } from 'http';
 import { jest } from '@jest/globals';
 

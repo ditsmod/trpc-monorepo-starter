@@ -1,6 +1,6 @@
 ## About the project
 
-This monorepository includes [Ditsmod](https://ditsmod.github.io/en/) applications starter.
+This monorepository includes [Holu](https://holujs.github.io/en/) applications starter.
 
 All applications are located in `apps/*`.
 
@@ -49,13 +49,13 @@ The file [AGENTS.md][1] is intended for AI agents and should be placed in the ro
 npm run setup:agents
 ```
 
-Additionally, you can install [AI agent skills][2] to help them better understand the specifics of Ditsmod applications:
+Additionally, you can install [AI agent skills][2] to help them better understand the specifics of Holu applications:
 
 ```bash
-npx skills add ditsmod/agent-skills --skill '*' -y
+npx skills add https://github.com/holujs/agent-skills --skill '*' -y
 ```
 
 AI agent skills are only loaded when needed, when you ask something relevant to them.
 
-[1]: https://github.com/ditsmod/agent-skills/blob/main/AGENTS.md
-[2]: https://github.com/ditsmod/agent-skills/tree/main
+[1]: https://github.com/holujs/agent-skills/blob/main/AGENTS.md
+[2]: https://github.com/holujs/agent-skills/tree/main
