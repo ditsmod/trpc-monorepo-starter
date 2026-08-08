@@ -37,8 +37,8 @@
     "#service/*": "./dist/app/modules/service/*"
   },
   "dependencies": {
-    "@holu/core": "^0.1.2",
-    "@holu/trpc": "^0.1.2",
+    "@holu/core": "^0.1.3",
+    "@holu/trpc": "^0.1.3",
     "@trpc/server": "^11.5.1",
     "dotenv": "^16.6.1",
     "zod": "^4.4.3"
